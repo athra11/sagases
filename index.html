@@ -12,30 +12,25 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      /* Backgrounds — cinza escuro neutro, não azulado */
-      --bg:       #111214;
-      --bg2:      #17191c;
-      --bg3:      #1d2025;
+      --bg:        #0e1117;
+      --bg2:       #141720;
+      --bg3:       #1a1f2e;
 
-      /* Azul — usado com parcimônia */
-      --blue:     #2d6fc4;
-      --blue2:    #4585d8;
-      --blue-dim: rgba(45,111,196,0.12);
-      --blue-line:rgba(45,111,196,0.2);
+      --blue1:     #1a4a8a;
+      --blue2:     #2560b0;
+      --blue3:     #3a7bd5;
+      --blue4:     #5a9ae0;
+      --blue5:     #8ab8ed;
+      --blue-dim:  rgba(37,96,176,0.15);
+      --blue-line: rgba(37,96,176,0.28);
+      --blue-soft: rgba(90,154,224,0.1);
 
-      /* Dourado — destaque principal */
-      --gold:     #b5924a;
-      --gold2:    #cca55e;
-      --gold3:    #e0bf82;
-      --gold-dim: rgba(181,146,74,0.12);
-      --gold-line:rgba(181,146,74,0.22);
-
-      /* Cinza — tom dominante no layout */
-      --gray1:    #e8eaed;   /* textos principais */
-      --gray2:    #b0b8c4;   /* textos secundários */
-      --gray3:    #727e8c;   /* textos terciários/muted */
-      --gray4:    #3a4048;   /* bordas fortes */
-      --gray5:    rgba(255,255,255,0.06); /* superfícies sutis */
+      --gray1:     #f0f2f5;
+      --gray2:     #c8d0dc;
+      --gray3:     #8a97a8;
+      --gray4:     #4a5568;
+      --gray5:     #2a3244;
+      --gray6:     rgba(255,255,255,0.05);
 
       --font-serif: 'Cormorant Garamond', serif;
       --font-sans:  'Montserrat', sans-serif;
@@ -56,8 +51,8 @@
       position: sticky; top: 0; z-index: 100;
       display: flex; justify-content: space-between; align-items: center;
       padding: 22px 52px;
-      border-bottom: 0.5px solid var(--gray4);
-      background: rgba(17,18,20,0.97);
+      border-bottom: 0.5px solid var(--gray5);
+      background: rgba(14,17,23,0.97);
       backdrop-filter: blur(12px);
     }
 
@@ -66,7 +61,7 @@
       font-size: 22px; font-weight: 300; letter-spacing: 0.08em;
       color: var(--gray1); text-decoration: none;
     }
-    .logo span { color: var(--gold2); }
+    .logo span { color: var(--blue4); }
 
     .nav-links { display: flex; gap: 32px; list-style: none; }
     .nav-links a {
@@ -74,27 +69,27 @@
       font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 500;
       transition: color 0.2s;
     }
-    .nav-links a:hover { color: var(--gold2); }
+    .nav-links a:hover { color: var(--blue4); }
 
     .nav-cta {
-      background: transparent; border: 0.5px solid var(--gold);
-      color: var(--gold2); padding: 8px 20px;
-      font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
+      background: var(--blue2); color: var(--gray1);
+      padding: 9px 22px; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
       cursor: pointer; font-family: var(--font-sans); font-weight: 500;
-      transition: all 0.2s; text-decoration: none;
+      transition: background 0.2s; text-decoration: none; border: none;
     }
-    .nav-cta:hover { background: var(--gold); color: var(--bg); }
+    .nav-cta:hover { background: var(--blue3); }
 
     /* ── HERO ── */
     .hero {
       padding: 100px 52px 80px;
       display: grid; grid-template-columns: 1fr 1fr;
       gap: 64px; align-items: center; min-height: 560px;
+      background: linear-gradient(135deg, var(--bg) 60%, var(--bg3) 100%);
     }
 
     .hero-tag {
       font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
-      color: var(--gold2); font-weight: 500; margin-bottom: 20px;
+      color: var(--blue4); font-weight: 500; margin-bottom: 20px;
     }
 
     .hero-title {
@@ -103,7 +98,7 @@
       margin-bottom: 24px; color: var(--gray1);
       animation: fadeUp 0.9s ease both;
     }
-    .hero-title em { font-style: italic; color: var(--gold3); }
+    .hero-title em { font-style: italic; color: var(--blue5); }
 
     .hero-desc {
       color: var(--gray3); font-size: 13px; line-height: 1.85;
@@ -114,61 +109,60 @@
     .hero-btns { display: flex; gap: 20px; align-items: center; animation: fadeUp 0.9s 0.3s ease both; }
 
     .btn-primary {
-      background: var(--blue); color: var(--gray1);
+      background: var(--blue2); color: var(--gray1);
       padding: 14px 32px; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase;
       font-weight: 500; border: none; cursor: pointer; font-family: var(--font-sans);
       transition: background 0.2s; text-decoration: none; display: inline-block;
     }
-    .btn-primary:hover { background: var(--blue2); }
+    .btn-primary:hover { background: var(--blue3); }
 
     .btn-secondary {
       color: var(--gray2); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
       font-weight: 400; text-decoration: underline; text-underline-offset: 4px;
-      text-decoration-color: var(--gold-line); cursor: pointer;
+      text-decoration-color: var(--blue-line); cursor: pointer; background: none; border: none;
     }
-    .btn-secondary:hover { color: var(--gold2); }
+    .btn-secondary:hover { color: var(--blue4); }
 
     /* Hero card */
     .hero-visual { animation: fadeUp 0.9s 0.2s ease both; }
 
     .molecule-card {
-      background: var(--gray5);
-      border: 0.5px solid var(--gray4);
-      padding: 8px;
+      background: var(--blue-soft);
+      border: 0.5px solid var(--blue-line);
     }
 
     .molecule-row { display: flex; }
     .mol { flex: 1; text-align: center; padding: 24px 8px 20px; }
     .mol-symbol {
       font-family: var(--font-serif); font-size: 42px; font-weight: 300;
-      color: var(--gold3); line-height: 1;
+      color: var(--blue4); line-height: 1;
     }
     .mol-name {
       font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase;
       color: var(--gray3); margin-top: 8px;
     }
     .mol-purity { font-size: 10px; color: var(--gray2); margin-top: 3px; }
-    .mol-divider { width: 0.5px; background: var(--gray4); }
+    .mol-divider { width: 0.5px; background: var(--blue-line); }
 
-    .stat-row { display: flex; border-top: 0.5px solid var(--gray4); }
-    .stat { flex: 1; padding: 18px 16px; border-right: 0.5px solid var(--gray4); }
+    .stat-row { display: flex; border-top: 0.5px solid var(--blue-line); }
+    .stat { flex: 1; padding: 18px 16px; border-right: 0.5px solid var(--blue-line); }
     .stat:last-child { border-right: none; }
     .stat-n {
       font-family: var(--font-serif); font-size: 24px; font-weight: 300;
-      color: var(--gold2);
+      color: var(--blue4);
     }
     .stat-l { font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray3); }
 
     /* ── DIVIDER ── */
     .divider { display: flex; align-items: center; gap: 24px; padding: 0 52px; margin: 8px 0; }
-    .divider-line { flex: 1; height: 0.5px; background: var(--gray4); }
-    .divider-icon { font-family: var(--font-serif); font-size: 14px; color: var(--gold); }
+    .divider-line { flex: 1; height: 0.5px; background: var(--gray5); }
+    .divider-icon { font-family: var(--font-serif); font-size: 14px; color: var(--blue3); }
 
     /* ── SECTIONS ── */
     .section { padding: 80px 52px; }
     .section-label {
       font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
-      color: var(--gold2); font-weight: 500; margin-bottom: 12px;
+      color: var(--blue4); font-weight: 500; margin-bottom: 12px;
     }
     .section-title {
       font-family: var(--font-serif); font-size: 42px; font-weight: 300;
@@ -178,63 +172,49 @@
     /* ── PRODUCTS ── */
     .products-grid {
       display: grid; grid-template-columns: repeat(5, 1fr);
-      gap: 1px; background: var(--gray4);
+      gap: 1px; background: var(--gray5);
     }
     .product-card { background: var(--bg); padding: 32px 22px; transition: background 0.25s; }
     .product-card:hover { background: var(--bg2); }
 
     .prod-number {
       font-family: var(--font-serif); font-size: 11px;
-      color: var(--gray4); margin-bottom: 20px; letter-spacing: 0.1em;
+      color: var(--gray5); margin-bottom: 20px; letter-spacing: 0.1em;
     }
     .prod-symbol {
       font-family: var(--font-serif); font-size: 44px; font-weight: 300;
-      color: var(--blue2); line-height: 1; margin-bottom: 10px;
+      color: var(--blue3); line-height: 1; margin-bottom: 10px;
     }
-    .prod-name { font-size: 12px; font-weight: 500; color: var(--gray1); margin-bottom: 10px; letter-spacing: 0.04em; }
-    .prod-desc { font-size: 11px; color: var(--gray3); line-height: 1.75; margin-bottom: 20px; }
+    .prod-name { font-size: 12px; font-weight: 500; color: var(--gray1); margin-bottom: 16px; letter-spacing: 0.04em; }
     .prod-tag {
       display: inline-block; font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase;
-      color: var(--gold); border: 0.5px solid var(--gold-line); padding: 4px 10px;
+      color: var(--blue4); border: 0.5px solid var(--blue-line); padding: 4px 10px;
     }
 
     /* ── SERVICES ── */
-    .services { padding: 80px 52px; background: var(--bg2); border-top: 0.5px solid var(--gray4); border-bottom: 0.5px solid var(--gray4); }
-    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .services { padding: 80px 52px; background: var(--bg2); border-top: 0.5px solid var(--gray5); border-bottom: 0.5px solid var(--gray5); }
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--gray5); }
 
     .service-card {
-      border: 0.5px solid var(--gray4);
-      padding: 40px 32px;
-      position: relative;
-      overflow: hidden;
-      transition: border-color 0.25s, background 0.25s;
-      background: var(--bg);
+      padding: 40px 32px; position: relative; overflow: hidden;
+      transition: background 0.25s; background: var(--bg2);
     }
-    .service-card:hover { border-color: var(--gold-line); background: var(--bg3); }
+    .service-card:hover { background: var(--bg3); }
     .service-card::before {
-      content: '';
-      position: absolute; top: 0; left: 0; right: 0; height: 2px;
-      background: var(--gold); opacity: 0;
-      transition: opacity 0.25s;
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: var(--blue3); opacity: 0; transition: opacity 0.25s;
     }
     .service-card:hover::before { opacity: 1; }
 
-    .service-icon {
-      font-family: var(--font-serif); font-size: 52px; font-weight: 300;
-      color: var(--gray4); line-height: 1; margin-bottom: 24px;
-      transition: color 0.25s;
-    }
-    .service-card:hover .service-icon { color: var(--gold-line); }
-
     .service-number {
       font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase;
-      color: var(--gold); margin-bottom: 12px;
+      color: var(--blue4); margin-bottom: 16px;
     }
     .service-name {
       font-family: var(--font-serif); font-size: 28px; font-weight: 300;
       color: var(--gray1); margin-bottom: 16px; line-height: 1.2;
     }
-    .service-desc { font-size: 11px; color: var(--gray3); line-height: 1.8; margin-bottom: 28px; }
+    .service-desc { font-size: 11px; color: var(--gray3); line-height: 1.8; margin-bottom: 24px; }
 
     .service-details { display: flex; flex-direction: column; gap: 8px; margin-bottom: 28px; }
     .service-detail-item {
@@ -242,21 +222,21 @@
       font-size: 11px; color: var(--gray2);
     }
     .service-detail-item::before {
-      content: '—'; color: var(--blue2); flex-shrink: 0; font-size: 10px; margin-top: 1px;
+      content: '—'; color: var(--blue3); flex-shrink: 0; font-size: 10px; margin-top: 1px;
     }
 
     .service-cta {
       font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase;
-      color: var(--gold2); text-decoration: none;
-      border-bottom: 0.5px solid var(--gold-line); padding-bottom: 2px;
-      transition: color 0.2s, border-color 0.2s;
+      color: var(--blue4); text-decoration: none;
+      border-bottom: 0.5px solid var(--blue-line); padding-bottom: 2px;
+      transition: color 0.2s;
     }
-    .service-cta:hover { color: var(--gold3); border-color: var(--gold2); }
+    .service-cta:hover { color: var(--blue5); }
 
     /* ── ABOUT ── */
     .about {
       padding: 80px 52px;
-      display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; align-items: start;
+      display: block; max-width: 640px;
     }
     .about-text p { color: var(--gray3); font-size: 12px; line-height: 1.95; margin-bottom: 16px; }
     .about-text p strong { color: var(--gray1); font-weight: 500; }
@@ -264,53 +244,53 @@
     .cert-row { display: flex; flex-direction: column; gap: 10px; }
     .cert-item {
       display: flex; gap: 16px; align-items: flex-start;
-      padding: 14px 16px; border: 0.5px solid var(--gray4);
+      padding: 14px 16px; border: 0.5px solid var(--gray5);
       transition: border-color 0.2s, background 0.2s;
     }
-    .cert-item:hover { background: var(--gold-dim); border-color: var(--gold-line); }
-    .cert-dot { width: 5px; height: 5px; background: var(--gold2); border-radius: 50%; margin-top: 6px; flex-shrink: 0; }
+    .cert-item:hover { background: var(--blue-dim); border-color: var(--blue-line); }
+    .cert-dot { width: 5px; height: 5px; background: var(--blue3); border-radius: 50%; margin-top: 6px; flex-shrink: 0; }
     .cert-title { font-size: 11px; font-weight: 500; color: var(--gray1); letter-spacing: 0.05em; }
     .cert-sub { font-size: 10px; color: var(--gray3); margin-top: 2px; }
 
     /* ── CONTACT ── */
-    .contact { padding: 80px 52px; background: var(--bg2); border-top: 0.5px solid var(--gray4); }
+    .contact { padding: 80px 52px; background: var(--bg2); border-top: 0.5px solid var(--gray5); }
     .contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; }
     .contact-info p { color: var(--gray3); font-size: 12px; line-height: 1.9; margin-bottom: 28px; }
     .contact-detail { display: flex; flex-direction: column; gap: 14px; }
     .c-row { display: flex; gap: 12px; align-items: center; font-size: 11px; color: var(--gray2); }
-    .c-label { font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold2); min-width: 64px; }
+    .c-label { font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--blue4); min-width: 64px; }
 
     .form-group { display: flex; flex-direction: column; gap: 14px; }
     .field { display: flex; flex-direction: column; gap: 6px; }
-    .field label { font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold2); }
+    .field label { font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--blue4); }
     .field input, .field textarea, .field select {
-      background: rgba(255,255,255,0.04); border: 0.5px solid var(--gray4);
+      background: rgba(255,255,255,0.04); border: 0.5px solid var(--gray5);
       color: var(--gray1); padding: 11px 14px;
       font-family: var(--font-sans); font-size: 12px; outline: none;
       transition: border-color 0.2s; width: 100%; appearance: none;
     }
-    .field input:focus, .field textarea:focus, .field select:focus { border-color: var(--gold); }
+    .field input:focus, .field textarea:focus, .field select:focus { border-color: var(--blue3); }
     .field input::placeholder, .field textarea::placeholder { color: var(--gray3); }
     .field textarea { height: 100px; resize: none; }
     .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
 
     .submit-btn {
-      background: var(--gold); color: var(--bg);
+      background: var(--blue2); color: var(--gray1);
       border: none; padding: 14px 36px;
       font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 500;
       font-family: var(--font-sans); cursor: pointer; align-self: flex-start; margin-top: 4px;
       transition: background 0.2s;
     }
-    .submit-btn:hover { background: var(--gold2); }
+    .submit-btn:hover { background: var(--blue3); }
 
     /* ── FOOTER ── */
     footer {
-      padding: 36px 52px; border-top: 0.5px solid var(--gray4);
+      padding: 36px 52px; border-top: 0.5px solid var(--gray5);
       display: flex; justify-content: space-between; align-items: center;
       flex-wrap: wrap; gap: 16px;
     }
     .footer-logo { font-family: var(--font-serif); font-size: 18px; font-weight: 300; letter-spacing: 0.08em; }
-    .footer-logo span { color: var(--gold2); }
+    .footer-logo span { color: var(--blue4); }
     .footer-copy { font-size: 10px; color: var(--gray3); letter-spacing: 0.07em; }
 
     /* ── ANIMATIONS ── */
@@ -349,19 +329,18 @@
 
   <!-- NAV -->
   <nav>
-    <a href="#" class="logo">Sulamericana <span>Gases</span></a>
+    <a href="#inicio" class="logo">Sulamericana <span>Gases</span></a>
     <ul class="nav-links">
       <li><a href="#produtos">Produtos</a></li>
       <li><a href="#servicos">Serviços</a></li>
       <li><a href="#sobre">Sobre</a></li>
-      <li><a href="#qualidade">Qualidade</a></li>
       <li><a href="#contato">Contato</a></li>
     </ul>
     <a href="#contato" class="nav-cta">Solicitar Cotação</a>
   </nav>
 
   <!-- HERO -->
-  <section class="hero" id="inicio">
+  <section id="inicio" class="hero">
     <div class="hero-left">
       <div class="hero-tag">Gases Hospitalares &amp; Medicinais</div>
       <h1 class="hero-title">Pureza que<br><em>salva</em><br>vidas.</h1>
@@ -413,7 +392,7 @@
   <div class="divider"><div class="divider-line"></div><div class="divider-icon">◆</div><div class="divider-line"></div></div>
 
   <!-- PRODUCTS -->
-  <section class="section fade-in" id="produtos">
+  <section id="produtos" class="section fade-in">
     <div class="section-label">Portfólio</div>
     <h2 class="section-title">Nossos produtos</h2>
     <div class="products-grid">
@@ -453,13 +432,11 @@
   <div class="divider"><div class="divider-line"></div><div class="divider-icon">◆</div><div class="divider-line"></div></div>
 
   <!-- SERVICES -->
-  <section class="services fade-in" id="servicos">
+  <section id="servicos" class="services fade-in">
     <div class="section-label">O que oferecemos</div>
     <h2 class="section-title">Nossos serviços</h2>
     <div class="services-grid">
-
       <div class="service-card">
-        <div class="service-icon">◎</div>
         <div class="service-number">Serviço 01</div>
         <div class="service-name">Concentrador<br>de Oxigênio</div>
         <div class="service-desc">Fornecimento, instalação e manutenção de concentradores de oxigênio para uso hospitalar, clínico e domiciliar.</div>
@@ -471,9 +448,7 @@
         </div>
         <a href="#contato" class="service-cta">Solicitar serviço</a>
       </div>
-
       <div class="service-card">
-        <div class="service-icon">⬡</div>
         <div class="service-number">Serviço 02</div>
         <div class="service-name">Usina de<br>Gases</div>
         <div class="service-desc">Projeto, implantação e operação de usinas geradoras de gases on-site, com produção contínua e custos reduzidos.</div>
@@ -485,12 +460,10 @@
         </div>
         <a href="#contato" class="service-cta">Solicitar serviço</a>
       </div>
-
       <div class="service-card">
-        <div class="service-icon">⬜</div>
         <div class="service-number">Serviço 03</div>
         <div class="service-name">Cilindros &amp;<br>Recargas</div>
-        <div class="service-desc">Locação, venda e recarga de cilindros de gases em diversos volumes e pressões para todas as aplicações industriais e médicas.</div>
+        <div class="service-desc">Locação, venda e recarga de cilindros de gases em diversos volumes e pressões para todas as aplicações médicas.</div>
         <div class="service-details">
           <div class="service-detail-item">Cilindros P1 a P50 e especiais</div>
           <div class="service-detail-item">Recarga com certificação INMETRO</div>
@@ -499,14 +472,13 @@
         </div>
         <a href="#contato" class="service-cta">Solicitar serviço</a>
       </div>
-
     </div>
   </section>
 
   <div class="divider"><div class="divider-line"></div><div class="divider-icon">◆</div><div class="divider-line"></div></div>
 
   <!-- ABOUT -->
-  <section class="about fade-in" id="sobre">
+  <section id="sobre" class="about fade-in">
     <div>
       <div class="section-label">Sobre nós</div>
       <h2 class="section-title">Tradição e<br>precisão técnica</h2>
@@ -516,31 +488,11 @@
         <p>Atendemos UTIs, centros cirúrgicos, clínicas odontológicas e serviços de emergência com soluções customizadas para cada necessidade.</p>
       </div>
     </div>
-    <div id="qualidade">
-      <div class="section-label">Qualidade &amp; Certificações</div>
-      <div class="cert-row" style="margin-top:16px;">
-        <div class="cert-item">
-          <div class="cert-dot"></div>
-          <div><div class="cert-title">ISO 9001:2015</div><div class="cert-sub">Sistema de Gestão da Qualidade certificado</div></div>
-        </div>
-        <div class="cert-item">
-          <div class="cert-dot"></div>
-          <div><div class="cert-title">ANVISA — RDC 67</div><div class="cert-sub">Gases medicinais em conformidade com a regulamentação sanitária</div></div>
-        </div>
-        <div class="cert-item">
-          <div class="cert-dot"></div>
-          <div><div class="cert-title">INMETRO</div><div class="cert-sub">Cilindros e equipamentos com laudos e calibrações vigentes</div></div>
-        </div>
-        <div class="cert-item">
-          <div class="cert-dot"></div>
-          <div><div class="cert-title">ABNT NBR 14725</div><div class="cert-sub">Ficha de Informação de Segurança (FISPQ) para todos os produtos</div></div>
-        </div>
-      </div>
-    </div>
+
   </section>
 
   <!-- CONTACT -->
-  <section class="contact fade-in" id="contato">
+  <section id="contato" class="contact fade-in">
     <div class="section-label">Contato</div>
     <h2 class="section-title">Solicite uma proposta</h2>
     <div class="contact-inner">
@@ -548,7 +500,7 @@
         <p>Nossa equipe comercial está pronta para atender sua demanda e oferecer a melhor solução em gases para a sua operação.</p>
         <div class="contact-detail">
           <div class="c-row"><span class="c-label">Telefone</span><span>(11) 3000-0000</span></div>
-          <div class="c-row"><span class="c-label">E-mail</span><span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1b7874767e6978727a775b686e777a767e6972787a757a7c7a687e6835787476357969">[email&#160;protected]</a></span></div>
+          <div class="c-row"><span class="c-label">E-mail</span><span>comercial@sagases.com</span></div>
           <div class="c-row"><span class="c-label">Horário</span><span>Seg–Sex, 08h–18h</span></div>
           <div class="c-row"><span class="c-label">Urgência</span><span>Plantão 24h para hospitais</span></div>
         </div>
@@ -567,7 +519,6 @@
           <select id="assunto">
             <option value="">Selecione...</option>
             <optgroup label="Produtos">
-              <option>Oxigênio Industrial</option>
               <option>Oxigênio Medicinal</option>
               <option>Nitrogênio</option>
               <option>Argônio</option>
@@ -597,15 +548,36 @@
     <div class="footer-copy">© 2025 Sulamericana Gases Indústria Ltda. — Todos os direitos reservados.</div>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  <script>
+    // Scroll animations
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.08 });
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
+    // Nav smooth scroll fix para GitHub Pages
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // Form submit
     function handleSubmit(e) {
       e.preventDefault();
       const btn = e.target.querySelector('.submit-btn');
       btn.textContent = 'Mensagem enviada!';
-      btn.style.background = '#3a5c2a';
- 
+      btn.style.background = '#1a4a8a';
+      setTimeout(() => {
+        btn.textContent = 'Enviar mensagem';
+        btn.style.background = '';
+        e.target.reset();
+      }, 3000);
+    }
+  </script>
+</body>
+</html>
