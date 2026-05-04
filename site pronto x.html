@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sul Americana Gases — Fornecimento de gases hospitalares de alta pureza. Oxigênio, Nitrogênio e mais. AFE ANVISA certificado.">
+  <title>SUL AMERICANA GASES — Pureza que salva vidas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0e1117;
+      --bg2:       #141720;
+      --bg3:       #1a1f2e;
+      --blue1:     #1a4a8a;
+      --blue2:     #2560b0;
+      --blue3:     #3a7bd5;
+      --blue4:     #5a9ae0;
+      --blue5:     #8ab8ed;
+      --blue-dim:  rgba(37,96,176,0.15);
+      --blue-line: rgba(37,96,176,0.28);
+      --blue-soft: rgba(90,154,224,0.1);
+      --gray1:     #f0f2f5;
+      --gray2:     #c8d0dc;
+      --gray3:     #8a97a8;
+      --gray4:     #4a5568;
+      --gray5:     #2a3244;
+      --font-serif: 'Cormorant Garamond', serif;
+      --font-sans:  'Montserrat', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--gray1); font-family: var(--font-sans); font-size: 13px; line-height: 1.7; }
+
+    /* NAV */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 18px 52px;
+      border-bottom: 0.5px solid var(--gray5);
+      background: rgba(14,17,23,0.97);
+      backdrop-filter: blur(12px);
+    }
+    .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .logo-icon { width: 36px; height: 36px; opacity: 0.92; }
+    .logo-text { display: flex; flex-direction: column; line-height: 1; }
+    .logo-name { font-family: var(--font-sans); font-size: 13px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gray1); }
+    .logo-sub { font-family: var(--font-sans); font-size: 9px; font-weight: 400; letter-spacing: 0.3em; text-transform: uppercase; color: var(--blue4); margin-top: 2px; }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--gray3); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--blue4); }
+    .nav-cta { background: var(--blue2); color: var(--gray1); padding: 9px 22px; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; font-family: var(--font-sans); font-weight: 500; transition: background 0.2s; text-decoration: none; border: none; }
+    .nav-cta:hover { background: var(--blue3); }
+
+    /* HERO */
+    .hero { padding: 100px 52px 80px; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; min-height: 560px; background: linear-gradient(135deg, var(--bg) 60%, var(--bg3) 100%); }
+    .hero-tag { font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--blue4); font-weight: 500; margin-bottom: 20px; }
+    .hero-title { font-family: var(--font-serif); font-size: 60px; font-weight: 300; line-height: 1.12; margin-bottom: 24px; color: var(--gray1); animation: fadeUp 0.9s ease both; }
+    .hero-title em { font-style: italic; color: var(--blue5); }
+    .hero-desc { color: var(--gray3); font-size: 13px; line-height: 1.85; max-width: 400px; margin-bottom: 40px; animation: fadeUp 0.9s 0.15s ease both; }
+    .hero-btns { display: flex; gap: 20px; align-items: center; animation: fadeUp 0.9s 0.3s ease both; }
+    .btn-primary { background: var(--blue2); color: var(--gray1); padding: 14px 32px; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 500; border: none; cursor: pointer; font-family: var(--font-sans); transition: background 0.2s; text-decoration: none; display: inline-block; }
+    .btn-primary:hover { background: var(--blue3); }
+    .btn-secondary { color: var(--gray2); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 400; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--blue-line); cursor: pointer; background: none; border: none; }
+    .btn-secondary:hover { color: var(--blue4); }
+    .hero-visual { animation: fadeUp 0.9s 0.2s ease both; }
+    .molecule-card { background: var(--blue-soft); border: 0.5px solid var(--blue-line); }
+    .molecule-row { display: flex; }
+    .mol { flex: 1; text-align: center; padding: 24px 8px 20px; }
+    .mol-symbol { font-family: var(--font-serif); font-size: 42px; font-weight: 300; color: var(--blue4); line-height: 1; }
+    .mol-name { font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray3); margin-top: 8px; }
+    .mol-purity { font-size: 10px; color: var(--gray2); margin-top: 3px; }
+    .mol-divider { width: 0.5px; background: var(--blue-line); }
+    .stat-row { display: flex; border-top: 0.5px solid var(--blue-line); }
+    .stat { flex: 1; padding: 18px 16px; border-right: 0.5px solid var(--blue-line); }
+    .stat:last-child { border-right: none; }
+    .stat-n { font-family: var(--font-serif); font-size: 24px; font-weight: 300; color: var(--blue4); }
+    .stat-l { font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray3); }
+
+    /* DIVIDER */
+    .divider { display: flex; align-items: center; gap: 24px; padding: 0 52px; margin: 8px 0; }
+    .divider-line { flex: 1; height: 0.5px; background: var(--gray5); }
+    .divider-icon { font-family: var(--font-serif); font-size: 14px; color: var(--blue3); }
+
+    /* SECTIONS */
+    .section { padding: 80px 52px; }
+    .section-label { font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--blue4); font-weight: 500; margin-bottom: 12px; }
+    .section-title { font-family: var(--font-serif); font-size: 42px; font-weight: 300; color: var(--gray1); margin-bottom: 48px; line-height: 1.2; }
+
+    /* PRODUCTS */
+    .products-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--gray5); }
+    .product-card { background: var(--bg); padding: 32px 22px; transition: background 0.25s; }
+    .product-card:hover { background: var(--bg2); }
+    .prod-number { font-family: var(--font-serif); font-size: 11px; color: var(--gray5); margin-bottom: 20px; letter-spacing: 0.1em; }
+    .prod-symbol { font-family: var(--font-serif); font-size: 44px; font-weight: 300; color: var(--blue3); line-height: 1; margin-bottom: 10px; }
+    .prod-name { font-size: 12px; font-weight: 500; color: var(--gray1); margin-bottom: 16px; letter-spacing: 0.04em; }
+    .prod-tag { display: inline-block; font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--blue4); border: 0.5px solid var(--blue-line); padding: 4px 10px; }
+
+    /* SERVICES */
+    .services { padding: 80px 52px; background: var(--bg2); border-top: 0.5px solid var(--gray5); border-bottom: 0.5px solid var(--gray5); }
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .service-card { border: 0.5px solid var(--gray5); overflow: hidden; transition: border-color 0.25s, background 0.25s; background: var(--bg); position: relative; }
+    .service-card:hover { border-color: var(--blue-line); }
+    .service-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--blue3); opacity: 0; transition: opacity 0.25s; }
+    .service-card:hover::before { opacity: 1; }
+
+    /* card com foto de topo (concentrador) */
+    .service-img-top { width: 100%; height: 200px; object-fit: cover; display: block; filter: brightness(0.75) saturate(0.6); transition: filter 0.3s; }
+    .service-card:hover .service-img-top { filter: brightness(0.85) saturate(0.7); }
+
+    /* card com miniatura no canto (cilindros) */
+    .service-body { padding: 28px; position: relative; }
+    .service-thumb { position: absolute; top: 20px; right: 20px; width: 100px; height: 100px; object-fit: cover; border-radius: 2px; filter: brightness(0.78) saturate(0.7); border: 0.5px solid var(--gray5); }
+
+    .service-number { font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--blue4); margin-bottom: 10px; }
+    .service-name { font-family: var(--font-serif); font-size: 26px; font-weight: 300; color: var(--gray1); margin-bottom: 12px; line-height: 1.2; }
+    .service-name-narrow { max-width: 200px; }
+    .service-desc { font-size: 11px; color: var(--gray3); line-height: 1.8; margin-bottom: 20px; }
+    .service-details { display: flex; flex-direction: column; gap: 8px; margin-bottom: 24px; }
+    .service-detail-item { display: flex; gap: 10px; align-items: flex-start; font-size: 11px; color: var(--gray2); }
+    .service-detail-item::before { content: '—'; color: var(--blue3); flex-shrink: 0; font-size: 10px; margin-top: 1px; }
+    .service-cta { font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--blue4); text-decoration: none; border-bottom: 0.5px solid var(--blue-line); padding-bottom: 2px; transition: color 0.2s; display: inline-block; }
+    .service-cta:hover { color: var(--blue5); }
+
+    /* ABOUT */
+    .about { padding: 80px 52px; display: block; max-width: 640px; }
+    .about-text p { color: var(--gray3); font-size: 12px; line-height: 1.95; margin-bottom: 16px; }
+    .about-text p strong { color: var(--gray1); font-weight: 500; }
+    .cert-row { display: flex; flex-direction: column; gap: 10px; }
+    .cert-item { display: flex; gap: 16px; align-items: flex-start; padding: 14px 16px; border: 0.5px solid var(--gray5); transition: border-color 0.2s, background 0.2s; }
+    .cert-item:hover { background: var(--blue-dim); border-color: var(--blue-line); }
+    .cert-dot { width: 5px; height: 5px; background: var(--blue3); border-radius: 50%; margin-top: 6px; flex-shrink: 0; }
+    .cert-title { font-size: 11px; font-weight: 500; color: var(--gray1); letter-spacing: 0.05em; }
+    .cert-sub { font-size: 10px; color: var(--gray3); margin-top: 2px; }
+
+    /* CONTACT */
+    .contact { padding: 80px 52px; background: var(--bg2); border-top: 0.5px solid var(--gray5); }
+    .contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; }
+    .contact-info p { color: var(--gray3); font-size: 12px; line-height: 1.9; margin-bottom: 28px; }
+    .contact-detail { display: flex; flex-direction: column; gap: 14px; }
+    .c-row { display: flex; gap: 12px; align-items: center; font-size: 11px; color: var(--gray2); }
+    .c-label { font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--blue4); min-width: 64px; }
+    .form-group { display: flex; flex-direction: column; gap: 14px; }
+    .field { display: flex; flex-direction: column; gap: 6px; }
+    .field label { font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--blue4); }
+    .field input, .field textarea, .field select { background: rgba(255,255,255,0.04); border: 0.5px solid var(--gray5); color: var(--gray1); padding: 11px 14px; font-family: var(--font-sans); font-size: 12px; outline: none; transition: border-color 0.2s; width: 100%; appearance: none; }
+    .field input:focus, .field textarea:focus, .field select:focus { border-color: var(--blue3); }
+    .field input::placeholder, .field textarea::placeholder { color: var(--gray3); }
+    .field textarea { height: 100px; resize: none; }
+    .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .submit-btn { background: var(--blue2); color: var(--gray1); border: none; padding: 14px 36px; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 500; font-family: var(--font-sans); cursor: pointer; align-self: flex-start; margin-top: 4px; transition: background 0.2s; }
+    .submit-btn:hover { background: var(--blue3); }
+
+    /* FOOTER */
+    footer { padding: 36px 52px; border-top: 0.5px solid var(--gray5); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    .footer-logo { display: flex; align-items: center; gap: 10px; }
+    .footer-logo-icon { width: 24px; height: 24px; opacity: 0.7; }
+    .footer-logo-text { font-family: var(--font-sans); font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gray2); }
+    .footer-copy { font-size: 10px; color: var(--gray3); letter-spacing: 0.07em; }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    /* RESPONSIVE */
+    @media (max-width: 1100px) {
+      .products-grid { grid-template-columns: repeat(2, 1fr); }
+      .services-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 900px) {
+      nav { padding: 16px 24px; }
+      .nav-links { display: none; }
+      .hero { grid-template-columns: 1fr; padding: 60px 24px 48px; }
+      .hero-title { font-size: 40px; }
+      .products-grid { grid-template-columns: repeat(2, 1fr); }
+      .services-grid { grid-template-columns: 1fr; }
+      .about { padding: 48px 24px; }
+      .contact-inner { grid-template-columns: 1fr; }
+      .section, .services, .contact { padding: 48px 24px; }
+      footer { padding: 28px 24px; }
+      .divider { padding: 0 24px; }
+    }
+    @media (max-width: 560px) {
+      .products-grid { grid-template-columns: 1fr; }
+      .field-row { grid-template-columns: 1fr; }
+      .hero-title { font-size: 34px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#inicio" class="logo">
+      <svg class="logo-icon" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="40" cy="40" r="37" stroke="#5a9ae0" stroke-width="2.5"/>
+        <path d="M24 46c0-5 3.5-9 8.5-9.5C33.5 32 37 29 42 29c6 0 10 4.5 10 10h2c3.3 0 6 2.7 6 6s-2.7 6-6 6H22c-3.3 0-6-2.7-6-6s2.7-6 6-6h2z" stroke="#5a9ae0" stroke-width="2" fill="none"/>
+        <line x1="22" y1="53" x2="58" y2="53" stroke="#5a9ae0" stroke-width="2" stroke-linecap="round"/>
+        <line x1="26" y1="58" x2="54" y2="58" stroke="#5a9ae0" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <div class="logo-text">
+        <span class="logo-name">Sul Americana</span>
+        <span class="logo-sub">Gases</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#produtos">Produtos</a></li>
+      <li><a href="#servicos">Serviços</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+    <a href="#contato" class="nav-cta">Solicitar Cotação</a>
+  </nav>
+
+  <section id="inicio" class="hero">
+    <div class="hero-left">
+      <div class="hero-tag">Gases Hospitalares &amp; Medicinais</div>
+      <h1 class="hero-title">Pureza que<br><em>salva</em><br>vidas.</h1>
+      <p class="hero-desc">Fornecemos gases medicinais de alta pureza para hospitais, clínicas e serviços de saúde. Excelência técnica aliada a padrões internacionais de qualidade.</p>
+      <div class="hero-btns">
+        <a href="#produtos" class="btn-primary">Ver Produtos</a>
+        <a href="#contato" class="btn-secondary">Fale conosco</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="molecule-card">
+        <div class="molecule-row">
+          <div class="mol">
+            <div class="mol-symbol">O₂</div>
+            <div class="mol-name">Oxigênio</div>
+            <div class="mol-purity">99,9% pureza</div>
+          </div>
+          <div class="mol-divider"></div>
+          <div class="mol">
+            <div class="mol-symbol">N₂</div>
+            <div class="mol-name">Nitrogênio</div>
+            <div class="mol-purity">99,99% pureza</div>
+          </div>
+          <div class="mol-divider"></div>
+          <div class="mol">
+            <div class="mol-symbol">N₂O</div>
+            <div class="mol-name">Óxido Nitroso</div>
+            <div class="mol-purity">Medicinal</div>
+          </div>
+        </div>
+        <div class="stat-row">
+          <div class="stat">
+            <div class="stat-n">+10</div>
+            <div class="stat-l">anos de mercado</div>
+          </div>
+          <div class="stat">
+            <div class="stat-n">AFE</div>
+            <div class="stat-l">ANVISA certificado</div>
+          </div>
+          <div class="stat">
+            <div class="stat-n">24h</div>
+            <div class="stat-l">atendimento</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"><div class="divider-line"></div><div class="divider-icon">◆</div><div class="divider-line"></div></div>
+
+  <section id="produtos" class="section fade-in">
+    <div class="section-label">Portfólio</div>
+    <h2 class="section-title">Nossos produtos</h2>
+    <div class="products-grid">
+      <div class="product-card">
+        <div class="prod-number">01</div>
+        <div class="prod-symbol">O₂</div>
+        <div class="prod-name">Oxigênio Medicinal</div>
+        <div class="prod-tag">Alta demanda</div>
+      </div>
+      <div class="product-card">
+        <div class="prod-number">02</div>
+        <div class="prod-symbol">N₂</div>
+        <div class="prod-name">Nitrogênio Criogênico</div>
+        <div class="prod-tag">Criogênico</div>
+      </div>
+      <div class="product-card">
+        <div class="prod-number">03</div>
+        <div class="prod-symbol">Ar<br><span style="font-size:22px;">resp.</span></div>
+        <div class="prod-name">Ar Respirável</div>
+        <div class="prod-tag">Segurança</div>
+      </div>
+      <div class="product-card">
+        <div class="prod-number">04</div>
+        <div class="prod-symbol">N₂O</div>
+        <div class="prod-name">Óxido Nitroso</div>
+        <div class="prod-tag">Medicinal</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"><div class="divider-line"></div><div class="divider-icon">◆</div><div class="divider-line"></div></div>
+
+  <section id="servicos" class="services fade-in">
+    <div class="section-label">O que oferecemos</div>
+    <h2 class="section-title">Nossos serviços</h2>
+    <div class="services-grid">
+
+      <!-- Concentrador — foto de topo -->
+      <div class="service-card">
+        <img class="service-img-top"
+          src="https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=800&q=80"
+          alt="Concentrador de Oxigênio"
+          onerror="this.style.display='none'">
+        <div class="service-body">
+          <div class="service-number">Serviço 01</div>
+          <div class="service-name">Concentrador<br>de Oxigênio</div>
+          <div class="service-desc">Fornecimento, instalação e manutenção de concentradores de oxigênio para uso hospitalar, clínico e domiciliar.</div>
+          <div class="service-details">
+            <div class="service-detail-item">Instalação e configuração técnica</div>
+            <div class="service-detail-item">Manutenção preventiva e corretiva</div>
+            <div class="service-detail-item">Suporte 24h para unidades de saúde</div>
+            <div class="service-detail-item">Laudos técnicos e certificação</div>
+          </div>
+          <a href="#contato" class="service-cta">Solicitar serviço</a>
+        </div>
+      </div>
+
+      <!-- Usina — sem foto -->
+      <div class="service-card">
+        <div class="service-body">
+          <div class="service-number">Serviço 02</div>
+          <div class="service-name">Usina de<br>Gases</div>
+          <div class="service-desc">Projeto, implantação e operação de usinas geradoras de gases on-site, com produção contínua e custos reduzidos.</div>
+          <div class="service-details">
+            <div class="service-detail-item">Estudo de viabilidade técnica</div>
+            <div class="service-detail-item">Implantação de usinas PSA e criogênicas</div>
+            <div class="service-detail-item">Operação e monitoramento remoto</div>
+            <div class="service-detail-item">Contrato de fornecimento dedicado</div>
+          </div>
+          <a href="#contato" class="service-cta">Solicitar serviço</a>
+        </div>
+      </div>
+
+      <!-- Cilindros — miniatura canto superior direito -->
+      <div class="service-card">
+        <div class="service-body">
+          <img class="service-thumb"
+            src="cilindros.jpg"
+            alt="Cilindros"
+            onerror="this.style.display='none'">
+          <div class="service-number">Serviço 03</div>
+          <div class="service-name service-name-narrow">Cilindros &amp;<br>Recargas</div>
+          <div class="service-desc">Locação, venda e recarga de cilindros de gases em diversos volumes e pressões para todas as aplicações médicas.</div>
+          <div class="service-details">
+            <div class="service-detail-item">Cilindros P1 a P50 e especiais</div>
+            <div class="service-detail-item">Recarga com certificação INMETRO</div>
+            <div class="service-detail-item">Entrega programada e emergencial</div>
+            <div class="service-detail-item">Gestão de estoque e controle de frota</div>
+          </div>
+          <a href="#contato" class="service-cta">Solicitar serviço</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider"><div class="divider-line"></div><div class="divider-icon">◆</div><div class="divider-line"></div></div>
+
+  <section id="sobre" class="about fade-in">
+    <div>
+      <div class="section-label">Sobre nós</div>
+      <h2 class="section-title">Tradição e<br>precisão técnica</h2>
+      <div class="about-text">
+        <p>A <strong>Sul Americana Gases</strong> é uma empresa especializada no fornecimento de gases medicinais de alta pureza, com foco em hospitais, clínicas e serviços de saúde em todo o território nacional.</p>
+        <p>Com mais de uma década de experiência, nossos processos seguem rigorosos padrões de qualidade, garantindo <strong>pureza certificada</strong> e rastreabilidade em cada lote entregue.</p>
+        <p>Atendemos UTIs, centros cirúrgicos, clínicas odontológicas e serviços de emergência com soluções customizadas para cada necessidade.</p>
+      </div>
+      <div style="margin-top: 40px;">
+        <div class="section-label">Certificações</div>
+        <div class="cert-row" style="margin-top:16px;">
+          <div class="cert-item">
+            <div class="cert-dot"></div>
+            <div>
+              <div class="cert-title">AFE — Autorização de Funcionamento de Empresa</div>
+              <div class="cert-sub">Autorização ANVISA para produção e comercialização de gases medicinais</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato" class="contact fade-in">
+    <div class="section-label">Contato</div>
+    <h2 class="section-title">Solicite uma proposta</h2>
+    <div class="contact-inner">
+      <div class="contact-info">
+        <p>Nossa equipe comercial está pronta para atender sua demanda e oferecer a melhor solução em gases para a sua operação.</p>
+        <div class="contact-detail">
+          <div class="c-row"><span class="c-label">Telefone</span><span>(11) 3000-0000</span></div>
+          <div class="c-row"><span class="c-label">E-mail</span><span>administrativo@sagases.com</span></div>
+          <div class="c-row"><span class="c-label">Horário</span><span>Seg–Sex, 08h–18h</span></div>
+          <div class="c-row"><span class="c-label">Urgência</span><span>Plantão 24h para hospitais</span></div>
+        </div>
+      </div>
+      <form class="form-group" action="https://formspree.io/f/maqvelre" method="POST">
+        <div class="field-row">
+          <div class="field"><label for="nome">Nome</label><input type="text" id="nome" placeholder="Seu nome" required></div>
+          <div class="field"><label for="empresa">Empresa</label><input type="text" id="empresa" placeholder="Razão social"></div>
+        </div>
+        <div class="field-row">
+          <div class="field"><label for="email">E-mail</label><input type="email" id="email" placeholder="seu@email.com" required></div>
+          <div class="field"><label for="tel">Telefone</label><input type="tel" id="tel" placeholder="(11) 99999-9999"></div>
+        </div>
+        <div class="field">
+          <label for="assunto">Assunto</label>
+          <select id="assunto">
+            <option value="">Selecione...</option>
+            <optgroup label="Produtos">
+              <option>Oxigênio Medicinal</option>
+              <option>Nitrogênio</option>
+              <option>Ar Respirável</option>
+              <option>Óxido Nitroso</option>
+            </optgroup>
+            <optgroup label="Serviços">
+              <option>Concentrador de Oxigênio</option>
+              <option>Usina de Gases</option>
+              <option>Cilindros e Recargas</option>
+            </optgroup>
+            <option>Outros</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="msg">Mensagem</label>
+          <textarea id="msg" placeholder="Descreva brevemente sua necessidade..."></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Enviar mensagem</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-logo">
+      <svg class="footer-logo-icon" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="40" cy="40" r="37" stroke="#5a9ae0" stroke-width="2.5"/>
+        <path d="M24 46c0-5 3.5-9 8.5-9.5C33.5 32 37 29 42 29c6 0 10 4.5 10 10h2c3.3 0 6 2.7 6 6s-2.7 6-6 6H22c-3.3 0-6-2.7-6-6s2.7-6 6-6h2z" stroke="#5a9ae0" stroke-width="2" fill="none"/>
+        <line x1="22" y1="53" x2="58" y2="53" stroke="#5a9ae0" stroke-width="2" stroke-linecap="round"/>
+        <line x1="26" y1="58" x2="54" y2="58" stroke="#5a9ae0" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <span class="footer-logo-text">Sul Americana Gases</span>
+    </div>
+    <div class="footer-copy">© 2025 Sul Americana Gases Indústria Ltda. — Todos os direitos reservados.</div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+      });
+    });
+
+    function handleSubmit(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('.submit-btn');
+      btn.textContent = 'Mensagem enviada!';
+      btn.style.background = '#1a4a8a';
+      setTimeout(() => { btn.textContent = 'Enviar mensagem'; btn.style.background = ''; e.target.reset(); }, 3000);
+    }
+  </script>
+</body>
+</html>
