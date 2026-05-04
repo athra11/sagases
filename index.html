@@ -402,36 +402,32 @@
           <div class="c-row"><span class="c-label">Urgência</span><span>Plantão 24h para hospitais</span></div>
         </div>
       </div>
-      <form class="form-group" action="https://formspree.io/f/maqvelre" method="POST">
+      <form class="form-group" action="https://formspree.io/f/maqvelre" method="POST" enctype="application/x-www-form-urlencoded">
         <div class="field-row">
-          <div class="field"><label for="nome">Nome</label><input type="text" id="nome" placeholder="Seu nome" required></div>
-          <div class="field"><label for="empresa">Empresa</label><input type="text" id="empresa" placeholder="Razão social"></div>
+          <div class="field"><label for="nome">Nome</label><input type="text" id="nome" name="nome" placeholder="Seu nome" required></div>
+          <div class="field"><label for="empresa">Empresa</label><input type="text" id="empresa" name="empresa" placeholder="Razão social"></div>
         </div>
         <div class="field-row">
-          <div class="field"><label for="email">E-mail</label><input type="email" id="email" placeholder="seu@email.com" required></div>
-          <div class="field"><label for="tel">Telefone</label><input type="tel" id="tel" placeholder="(11) 99999-9999"></div>
+          <div class="field"><label for="email">E-mail</label><input type="email" id="email" name="email" placeholder="seu@email.com" required></div>
+          <div class="field"><label for="tel">Telefone</label><input type="tel" id="tel" name="telefone" placeholder="(11) 99999-9999"></div>
         </div>
         <div class="field">
           <label for="assunto">Assunto</label>
-          <select id="assunto">
+          <select id="assunto" name="assunto">
             <option value="">Selecione...</option>
-            <optgroup label="Produtos">
-              <option>Oxigênio Medicinal</option>
-              <option>Nitrogênio</option>
-              <option>Ar Respirável</option>
-              <option>Óxido Nitroso</option>
-            </optgroup>
-            <optgroup label="Serviços">
-              <option>Concentrador de Oxigênio</option>
-              <option>Usina de Gases</option>
-              <option>Cilindros e Recargas</option>
-            </optgroup>
-            <option>Outros</option>
+            <option value="Oxigênio Medicinal">Oxigênio Medicinal</option>
+            <option value="Nitrogênio">Nitrogênio</option>
+            <option value="Ar Respirável">Ar Respirável</option>
+            <option value="Óxido Nitroso">Óxido Nitroso</option>
+            <option value="Concentrador de Oxigênio">Concentrador de Oxigênio</option>
+            <option value="Usina de Gases">Usina de Gases</option>
+            <option value="Cilindros e Recargas">Cilindros e Recargas</option>
+            <option value="Outros">Outros</option>
           </select>
         </div>
         <div class="field">
           <label for="msg">Mensagem</label>
-          <textarea id="msg" placeholder="Descreva brevemente sua necessidade..."></textarea>
+          <textarea id="msg" name="mensagem" placeholder="Descreva brevemente sua necessidade..."></textarea>
         </div>
         <button type="submit" class="submit-btn">Enviar mensagem</button>
       </form>
