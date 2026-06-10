@@ -108,7 +108,14 @@
     .service-card:hover::before { opacity: 1; }
 
     /* card com foto de topo (concentrador) */
-    .service-img-top { width: 100%; height: 200px; object-fit: cover; display: block; filter: brightness(0.75) saturate(0.6); transition: filter 0.3s; }
+    .service-img-top { width: 100%; height: 220px; object-fit: cover; object-position: center 30%; display: block; filter: brightness(0.8) saturate(0.65); transition: filter 0.3s; cursor: zoom-in; }
+
+    /* LIGHTBOX */
+    .lightbox { display: none; position: fixed; inset: 0; z-index: 999; background: rgba(0,0,0,0.92); align-items: center; justify-content: center; padding: 24px; }
+    .lightbox.active { display: flex; }
+    .lightbox img { max-width: 90vw; max-height: 90vh; object-fit: contain; border: 0.5px solid var(--gray5); box-shadow: 0 0 60px rgba(0,0,0,0.8); }
+    .lightbox-close { position: absolute; top: 20px; right: 28px; font-size: 32px; color: var(--gray2); cursor: pointer; line-height: 1; transition: color 0.2s; background: none; border: none; font-family: var(--font-sans); }
+    .lightbox-close:hover { color: var(--gray1); }
     .service-card:hover .service-img-top { filter: brightness(0.85) saturate(0.7); }
 
     /* card com miniatura no canto (cilindros) */
@@ -307,7 +314,7 @@
       <!-- Concentrador — foto de topo -->
       <div class="service-card">
         <img class="service-img-top"
-          src="concentrador.png"
+          src="Concentrador.png"
           alt="Concentrador de Oxigênio"
           onerror="this.style.display='none'">
         <div class="service-body">
@@ -344,15 +351,15 @@
         </div>
       </div>
 
-      <!-- Cilindros — miniatura canto superior direito -->
+      <!-- Cilindros — foto de topo -->
       <div class="service-card">
+        <img class="service-img-top"
+          src="cilindros.png"
+          alt="Cilindros e Recargas"
+          onerror="this.style.display='none'">
         <div class="service-body">
-          <img class="service-thumb"
-            src="cilindros.png"
-            alt="Cilindros"
-            onerror="this.style.display='none'">
           <div class="service-number">Serviço 03</div>
-          <div class="service-name service-name-narrow">Cilindros &amp;<br>Recargas</div>
+          <div class="service-name">Cilindros &amp;<br>Recargas</div>
           <div class="service-desc">Locação, venda e recarga de cilindros de gases em diversos volumes e pressões para todas as aplicações médicas.</div>
           <div class="service-details">
             <div class="service-detail-item">Cilindros P1 a P50 e especiais</div>
@@ -438,6 +445,12 @@
     </div>
   </section>
 
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <button class="lightbox-close" onclick="closeLightbox()">×</button>
+    <img id="lightbox-img" src="" alt="">
+  </div>
+
   <footer>
     <div class="footer-logo">
       <svg class="footer-logo-icon" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -452,6 +465,22 @@
   </footer>
 
   <script>
+    // Lightbox
+    document.querySelectorAll('.service-img-top').forEach(img => {
+      img.addEventListener('click', () => {
+        document.getElementById('lightbox-img').src = img.src;
+        document.getElementById('lightbox').classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
     }, { threshold: 0.08 });
