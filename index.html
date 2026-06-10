@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
     :root {
       --bg:        #0e1117;
       --bg2:       #141720;
@@ -30,8 +31,10 @@
       --font-serif: 'Cormorant Garamond', serif;
       --font-sans:  'Montserrat', sans-serif;
     }
+
     html { scroll-behavior: smooth; }
     body { background: var(--bg); color: var(--gray1); font-family: var(--font-sans); font-size: 13px; line-height: 1.7; }
+
     /* NAV */
     nav {
       position: sticky; top: 0; z-index: 100;
@@ -51,6 +54,7 @@
     .nav-links a:hover { color: var(--blue4); }
     .nav-cta { background: var(--blue2); color: var(--gray1); padding: 9px 22px; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; font-family: var(--font-sans); font-weight: 500; transition: background 0.2s; text-decoration: none; border: none; }
     .nav-cta:hover { background: var(--blue3); }
+
     /* HERO */
     .hero { padding: 100px 52px 80px; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; min-height: 560px; background: linear-gradient(135deg, var(--bg) 60%, var(--bg3) 100%); }
     .hero-tag { font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--blue4); font-weight: 500; margin-bottom: 20px; }
@@ -75,14 +79,17 @@
     .stat:last-child { border-right: none; }
     .stat-n { font-family: var(--font-serif); font-size: 24px; font-weight: 300; color: var(--blue4); }
     .stat-l { font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray3); }
+
     /* DIVIDER */
     .divider { display: flex; align-items: center; gap: 24px; padding: 0 52px; margin: 8px 0; }
     .divider-line { flex: 1; height: 0.5px; background: var(--gray5); }
     .divider-icon { font-family: var(--font-serif); font-size: 14px; color: var(--blue3); }
+
     /* SECTIONS */
     .section { padding: 80px 52px; }
     .section-label { font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--blue4); font-weight: 500; margin-bottom: 12px; }
     .section-title { font-family: var(--font-serif); font-size: 42px; font-weight: 300; color: var(--gray1); margin-bottom: 48px; line-height: 1.2; }
+
     /* PRODUCTS */
     .products-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--gray5); }
     .product-card { background: var(--bg); padding: 32px 22px; transition: background 0.25s; }
@@ -91,6 +98,7 @@
     .prod-symbol { font-family: var(--font-serif); font-size: 44px; font-weight: 300; color: var(--blue3); line-height: 1; margin-bottom: 10px; }
     .prod-name { font-size: 12px; font-weight: 500; color: var(--gray1); margin-bottom: 16px; letter-spacing: 0.04em; }
     .prod-tag { display: inline-block; font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--blue4); border: 0.5px solid var(--blue-line); padding: 4px 10px; }
+
     /* SERVICES */
     .services { padding: 80px 52px; background: var(--bg2); border-top: 0.5px solid var(--gray5); border-bottom: 0.5px solid var(--gray5); }
     .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
@@ -98,12 +106,15 @@
     .service-card:hover { border-color: var(--blue-line); }
     .service-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--blue3); opacity: 0; transition: opacity 0.25s; }
     .service-card:hover::before { opacity: 1; }
+
     /* card com foto de topo (concentrador) */
     .service-img-top { width: 100%; height: 200px; object-fit: cover; display: block; filter: brightness(0.75) saturate(0.6); transition: filter 0.3s; }
     .service-card:hover .service-img-top { filter: brightness(0.85) saturate(0.7); }
+
     /* card com miniatura no canto (cilindros) */
     .service-body { padding: 28px; position: relative; }
     .service-thumb { position: absolute; top: 20px; right: 20px; width: 100px; height: 100px; object-fit: cover; border-radius: 2px; filter: brightness(0.78) saturate(0.7); border: 0.5px solid var(--gray5); }
+
     .service-number { font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--blue4); margin-bottom: 10px; }
     .service-name { font-family: var(--font-serif); font-size: 26px; font-weight: 300; color: var(--gray1); margin-bottom: 12px; line-height: 1.2; }
     .service-name-narrow { max-width: 200px; }
@@ -113,6 +124,7 @@
     .service-detail-item::before { content: '—'; color: var(--blue3); flex-shrink: 0; font-size: 10px; margin-top: 1px; }
     .service-cta { font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--blue4); text-decoration: none; border-bottom: 0.5px solid var(--blue-line); padding-bottom: 2px; transition: color 0.2s; display: inline-block; }
     .service-cta:hover { color: var(--blue5); }
+
     /* ABOUT */
     .about { padding: 80px 52px; display: block; max-width: 640px; }
     .about-text p { color: var(--gray3); font-size: 12px; line-height: 1.95; margin-bottom: 16px; }
@@ -123,6 +135,7 @@
     .cert-dot { width: 5px; height: 5px; background: var(--blue3); border-radius: 50%; margin-top: 6px; flex-shrink: 0; }
     .cert-title { font-size: 11px; font-weight: 500; color: var(--gray1); letter-spacing: 0.05em; }
     .cert-sub { font-size: 10px; color: var(--gray3); margin-top: 2px; }
+
     /* CONTACT */
     .contact { padding: 80px 52px; background: var(--bg2); border-top: 0.5px solid var(--gray5); }
     .contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; }
@@ -140,21 +153,19 @@
     .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
     .submit-btn { background: var(--blue2); color: var(--gray1); border: none; padding: 14px 36px; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 500; font-family: var(--font-sans); cursor: pointer; align-self: flex-start; margin-top: 4px; transition: background 0.2s; }
     .submit-btn:hover { background: var(--blue3); }
-    .submit-btn:disabled { opacity: 0.7; cursor: wait; }
-    .form-msg { font-size: 11px; color: var(--blue4); margin-top: 4px; min-height: 16px; }
-    .form-msg.error { color: #ff6b6b; }
-    /* honeypot anti-spam — escondido para humanos */
-    .hp-field { position: absolute; left: -9999px; opacity: 0; pointer-events: none; }
+
     /* FOOTER */
     footer { padding: 36px 52px; border-top: 0.5px solid var(--gray5); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
     .footer-logo { display: flex; align-items: center; gap: 10px; }
     .footer-logo-icon { width: 24px; height: 24px; opacity: 0.7; }
     .footer-logo-text { font-family: var(--font-sans); font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gray2); }
     .footer-copy { font-size: 10px; color: var(--gray3); letter-spacing: 0.07em; }
+
     /* ANIMATIONS */
     @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
     .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
     .fade-in.visible { opacity: 1; transform: translateY(0); }
+
     /* RESPONSIVE */
     @media (max-width: 1100px) {
       .products-grid { grid-template-columns: repeat(2, 1fr); }
@@ -181,6 +192,7 @@
   </style>
 </head>
 <body>
+
   <nav>
     <a href="#inicio" class="logo">
       <svg class="logo-icon" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -202,6 +214,7 @@
     </ul>
     <a href="#contato" class="nav-cta">Solicitar Cotação</a>
   </nav>
+
   <section id="inicio" class="hero">
     <div class="hero-left">
       <div class="hero-tag">Gases Hospitalares &amp; Medicinais</div>
@@ -250,7 +263,9 @@
       </div>
     </div>
   </section>
+
   <div class="divider"><div class="divider-line"></div><div class="divider-icon">◆</div><div class="divider-line"></div></div>
+
   <section id="produtos" class="section fade-in">
     <div class="section-label">Portfólio</div>
     <h2 class="section-title">Nossos produtos</h2>
@@ -281,15 +296,18 @@
       </div>
     </div>
   </section>
+
   <div class="divider"><div class="divider-line"></div><div class="divider-icon">◆</div><div class="divider-line"></div></div>
+
   <section id="servicos" class="services fade-in">
     <div class="section-label">O que oferecemos</div>
     <h2 class="section-title">Nossos serviços</h2>
     <div class="services-grid">
+
       <!-- Concentrador — foto de topo -->
       <div class="service-card">
         <img class="service-img-top"
-          src="https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=800&q=80"
+          src="concentrador.png"
           alt="Concentrador de Oxigênio"
           onerror="this.style.display='none'">
         <div class="service-body">
@@ -305,8 +323,13 @@
           <a href="#contato" class="service-cta">Solicitar serviço</a>
         </div>
       </div>
-      <!-- Usina — sem foto -->
+
+      <!-- Usina — foto de topo -->
       <div class="service-card">
+        <img class="service-img-top"
+          src="usina.png"
+          alt="Usina de Gases"
+          onerror="this.style.display='none'">
         <div class="service-body">
           <div class="service-number">Serviço 02</div>
           <div class="service-name">Usina de<br>Gases</div>
@@ -320,11 +343,12 @@
           <a href="#contato" class="service-cta">Solicitar serviço</a>
         </div>
       </div>
+
       <!-- Cilindros — miniatura canto superior direito -->
       <div class="service-card">
         <div class="service-body">
           <img class="service-thumb"
-            src="cilindros.jpg"
+            src="cilindros.png"
             alt="Cilindros"
             onerror="this.style.display='none'">
           <div class="service-number">Serviço 03</div>
@@ -339,9 +363,12 @@
           <a href="#contato" class="service-cta">Solicitar serviço</a>
         </div>
       </div>
+
     </div>
   </section>
+
   <div class="divider"><div class="divider-line"></div><div class="divider-icon">◆</div><div class="divider-line"></div></div>
+
   <section id="sobre" class="about fade-in">
     <div>
       <div class="section-label">Sobre nós</div>
@@ -365,6 +392,7 @@
       </div>
     </div>
   </section>
+
   <section id="contato" class="contact fade-in">
     <div class="section-label">Contato</div>
     <h2 class="section-title">Solicite uma proposta</h2>
@@ -378,12 +406,7 @@
           <div class="c-row"><span class="c-label">Urgência</span><span>Plantão 24h para hospitais</span></div>
         </div>
       </div>
-      <form class="form-group" id="quote-form" action="https://formspree.io/f/maqvelre" method="POST">
-        <!-- Campos ocultos: assunto do email, "responder para" e honeypot anti-spam -->
-        <input type="hidden" name="_subject" value="Nova cotação - Site Sagases">
-        <input type="hidden" name="_replyto" value="">
-        <input class="hp-field" type="text" name="_gotcha" tabindex="-1" autocomplete="off">
-
+      <form class="form-group" action="https://formspree.io/f/maqvelre" method="POST" enctype="application/x-www-form-urlencoded">
         <div class="field-row">
           <div class="field"><label for="nome">Nome</label><input type="text" id="nome" name="nome" placeholder="Seu nome" required></div>
           <div class="field"><label for="empresa">Empresa</label><input type="text" id="empresa" name="empresa" placeholder="Razão social"></div>
@@ -411,10 +434,10 @@
           <textarea id="msg" name="mensagem" placeholder="Descreva brevemente sua necessidade..."></textarea>
         </div>
         <button type="submit" class="submit-btn">Enviar mensagem</button>
-        <div class="form-msg" id="form-msg" role="status" aria-live="polite"></div>
       </form>
     </div>
   </section>
+
   <footer>
     <div class="footer-logo">
       <svg class="footer-logo-icon" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -427,14 +450,13 @@
     </div>
     <div class="footer-copy">© 2025 Sul Americana Gases Indústria Ltda. — Todos os direitos reservados.</div>
   </footer>
+
   <script>
-    /* Animação de entrada das seções */
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
     }, { threshold: 0.08 });
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-    /* Scroll suave para âncoras */
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         const target = document.querySelector(this.getAttribute('href'));
@@ -442,56 +464,13 @@
       });
     });
 
-    /* ============================================================
-       ENVIO DO FORMULÁRIO VIA FORMSPREE (AJAX)
-       Mantém o usuário na página, mostra feedback e reseta o form.
-       ============================================================ */
-    const form = document.getElementById('quote-form');
-    const formMsg = document.getElementById('form-msg');
-    const submitBtn = form.querySelector('.submit-btn');
-    const originalBtnText = submitBtn.textContent;
-
-    form.addEventListener('submit', async function (e) {
+    function handleSubmit(e) {
       e.preventDefault();
-
-      // Personaliza assunto do email com o produto selecionado
-      const assunto = document.getElementById('assunto').value || 'Geral';
-      form.querySelector('input[name="_subject"]').value = `Nova cotação Sagases — ${assunto}`;
-
-      // Define "responder para" como o email do cliente (assim você responde direto a ele)
-      form.querySelector('input[name="_replyto"]').value = document.getElementById('email').value;
-
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Enviando...';
-      formMsg.textContent = '';
-      formMsg.classList.remove('error');
-
-      try {
-        const response = await fetch(form.action, {
-          method: 'POST',
-          body: new FormData(form),
-          headers: { 'Accept': 'application/json' }
-        });
-
-        if (response.ok) {
-          submitBtn.textContent = 'Mensagem enviada!';
-          formMsg.textContent = 'Recebemos sua solicitação. Entraremos em contato em breve.';
-          form.reset();
-        } else {
-          const data = await response.json().catch(() => ({}));
-          throw new Error((data.errors && data.errors[0] && data.errors[0].message) || 'Falha no envio');
-        }
-      } catch (err) {
-        submitBtn.textContent = 'Tentar novamente';
-        formMsg.textContent = 'Não foi possível enviar. Tente novamente ou ligue para nós.';
-        formMsg.classList.add('error');
-      }
-
-      setTimeout(() => {
-        submitBtn.textContent = originalBtnText;
-        submitBtn.disabled = false;
-      }, 4000);
-    });
+      const btn = e.target.querySelector('.submit-btn');
+      btn.textContent = 'Mensagem enviada!';
+      btn.style.background = '#1a4a8a';
+      setTimeout(() => { btn.textContent = 'Enviar mensagem'; btn.style.background = ''; e.target.reset(); }, 3000);
+    }
   </script>
 </body>
 </html>
